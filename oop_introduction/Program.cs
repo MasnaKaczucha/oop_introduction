@@ -29,3 +29,42 @@ Skewl sk1 = new Skewl()
     name = "SPS-PROSEK"
 };
 
+sk1.students.Add(item: new Student()
+{
+    name = "Mike",
+    surname = "Oxlong",
+    personal_id_num = 2000
+});
+sk1.students.Add(item: new Student()
+{
+    name = "Hugh",
+    surname = "Jass",
+    personal_id_num = 2000
+});
+
+Subject sub1 = new Subject()
+{
+    name = "App development",
+    abbreviation = "VA"
+};
+
+sk1.students[0].grades.Add(item: new Grade()
+{
+    value = 1,
+    weight = 30,
+    subject = sub1,
+});
+
+sk1.students[1].grades.Add(item: new Grade()
+{
+    value = 2,
+    weight = 30,
+    subject = sub1,
+});
+
+Console.WriteLine(sk1.AvgStudentMark());
+Console.WriteLine(sk1.AvgStudentMarkAccToSubject(sub1));
+
+
+Console.ReadKey();
+

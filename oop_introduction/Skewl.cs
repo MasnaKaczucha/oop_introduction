@@ -10,7 +10,7 @@ namespace oop_introduction
     internal class Skewl
     {
         internal string name;
-        List<Student> students = new List<Student>();
+        internal List<Student> students = new List<Student>();
         internal int StudentCount()
         {
 
@@ -20,12 +20,36 @@ namespace oop_introduction
 
         internal double AvgStudentMark()
         {
-            return 0;
+            int soucet = 0;
+            int pocet = 0;
+            foreach (var student in students)
+            {
+                foreach (var grade in student.grades)
+                {
+                    soucet += grade.value * grade.weight;
+                    pocet += grade.weight;
+                }
+            }
+            return soucet / pocet;
         }
 
         internal double AvgStudentMarkAccToSubject(Subject s)
         {
-            return 1;
+            int soucet = 0;
+            int pocet = 0;
+            foreach (var student in students)
+            {
+                foreach (var grade in student.grades)
+                {
+                    if(grade.subject == s)
+                    {
+                        soucet += grade.value * grade.weight;
+                        pocet += grade.weight;
+                    }
+                    
+                }
+            }
+            return soucet / pocet;
         }
 
     }

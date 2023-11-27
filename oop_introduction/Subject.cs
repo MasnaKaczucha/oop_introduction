@@ -8,5 +8,7 @@ namespace oop_introduction
 {
     internal class Subject
     {
+        internal string name;
+        internal string abbreviation;
     }
 }
